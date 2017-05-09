@@ -14,3 +14,14 @@ function intersection(l1,l2) {
 }
 
 intersection([1,2,3],[2,3,4]);
+
+
+function intersectionSet2 (l1,l2){
+	var ejer1 = document.getElementById("ej1-declarativo");
+	var resultado = l1.filter(function(n){
+		return l2.indexOf(n) !== -1;
+	})
+	ejer1.innerHTML = "Resultado de la comparación arreglo entre l1 y l2 : " + resultado;
+}
+
+intersectionSet2([1,2,3],[2,3,4]);
