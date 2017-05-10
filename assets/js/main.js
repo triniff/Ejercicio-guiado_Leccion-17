@@ -58,7 +58,7 @@ var productos = [				//* Arreglo de objetos
 	},
 ]
 
-function arregloImperativo(){				//* RESOLUCIÓN EJERCICIO 1 VERSIÓN IMPERATIVA
+function arregloImperativo(){				//* RESOLUCIÓN EJERCICIO 2 VERSIÓN IMPERATIVA
 	var computadores = [];					//* variable donde se guardaran los elementos
 	var ejer2 = document.getElementById("ej2-imperativo");
 	var mostrar = "";						//* variable donde se guardara solo el nombre del elemento para mostrar
@@ -77,3 +77,20 @@ function arregloImperativo(){				//* RESOLUCIÓN EJERCICIO 1 VERSIÓN IMPERATIVA
 }
 
 arregloImperativo()
+
+
+function arregloDeclarativo(){			//* RESOLUCIÓN EJERCICIO 2 VERSIÓN DECLARATIVA
+	var ejer2 = document.getElementById("ej2-declarativo");		
+	var mostrar = "";					//* variable donde guardara solo el nombre del elemento para mostrar
+
+	var computadores = productos.filter(function(producto){		//* recorre el arreglo productos y el resultado lo guarda en computadores
+		return producto.tipo === "computador";					//* retorna el producto que coincide con la propiedad tipo "computador"
+	})
+	computadores.forEach(function(el){							//* recorre compuradores y por cada elemento
+		mostrar += el.nombre + " ";								//* guarda solo el nombre del elemento en mostrar
+	})
+
+	ejer2.innerHTML = "Búsqueda de un elemento en un arreglo de objetos: " + mostrar;		//*muestra en el html el resultado final
+}
+
+arregloDeclarativo()
